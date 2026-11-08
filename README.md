@@ -34,9 +34,18 @@ Les mises à jour arrivent ensuite dans l'admin, depuis les releases GitHub.
 
 **Remplissage**
 
-- Le champ associe des champs du formulaire aux données de l'entreprise : nom, raison sociale, enseigne, SIRET, SIREN, adresse complète, numéro et voie, code postal, ville, code NAF, numéro de TVA, état administratif
+- Le champ associe des champs du formulaire aux données de l'entreprise : nom, raison sociale, enseigne, SIRET, SIREN, adresse complète, numéro et voie, code postal, ville, code NAF, numéro de TVA, état administratif, latitude, longitude
 - Sous le champ, un résumé rappelle le nom, l'adresse et l'état de l'entreprise choisie
 - Si le visiteur change ensuite le SIRET, les champs remplis se vident : ils ne décrivent plus le bon établissement
+
+**Avec Carte IGN pour WS Form**
+
+Si [Carte IGN pour WS Form](https://github.com/willybahuaud/wsform-ign) est actif, deux choses en plus :
+
+- Un groupe « Carte IGN » apparaît dans les réglages du champ. Choisis une carte du formulaire : l'établissement choisi s'y place, au zoom de ton choix (17 par défaut).
+- Un champ Adresse BAN peut recevoir l'adresse de l'entreprise par la correspondance des champs.
+
+Le point est placé avec les coordonnées de la base Sirene, sans appel de plus à la Géoplateforme. Sur un échantillon de 40 établissements, elles tombaient à 14 m de la BAN en médiane, et étaient plus justes quand les deux divergeaient.
 
 **Le reste**
 
@@ -53,6 +62,7 @@ Dans l'onglet Général du champ :
 |---|---|---|
 | Correspondance des champs | Nom, voie, code postal, ville, sans champ choisi | Les champs à remplir, et avec quelle donnée |
 | Établissement | Siège | Siège, ou établissements correspondant à la recherche |
+| Carte IGN, champ et zoom | Aucune carte, zoom 17 | La carte où placer l'établissement. Visible seulement avec Carte IGN pour WS Form |
 | Refuser un établissement fermé | Non | Vérifié auprès de l'API à l'envoi |
 | Refuser un SIRET absent de l'annuaire | Non | Vérifié auprès de l'API à l'envoi |
 | Afficher la source des données | Oui | Mention sous le champ, avec un lien vers la base Sirene |
@@ -64,7 +74,9 @@ Dans l'onglet Général du champ :
 - **Numéro de TVA :** l'API ne le donne pas pour toutes les entreprises. Le champ associé reste alors vide. Le plugin ne le calcule pas depuis le SIREN : un numéro calculé ne prouve pas que l'entreprise est assujettie.
 - **Établissements d'un SIREN :** taper un SIREN propose le siège. Pour un autre établissement, cherche par nom et ville, ou tape directement son SIRET.
 - **Adresse des établissements secondaires :** l'API ne détaille l'adresse que pour le siège. Pour les autres, « Numéro et voie » est déduit de l'adresse complète, en retirant le code postal et la ville.
-- **Sections répétables :** testé avec PRO, chaque ligne a sa recherche et ses champs remplis. LITE n'a pas de sections répétables.
+- **Sections répétables :** testé avec PRO, y compris les lignes ajoutées par le visiteur. Chaque ligne a sa recherche, ses champs remplis et sa carte. LITE n'a pas de sections répétables.
+- **Coordonnées :** quelques établissements n'en ont pas dans la base Sirene. La carte reste alors où elle est, et les champs latitude et longitude restent vides. Pour les recevoir, prends un champ texte ou masqué : un champ Nombre de WS Form refuse les décimales par défaut.
+- **Adresse en majuscules :** la base Sirene écrit les adresses en majuscules, avec ses abréviations (« AV », « CHE »). Le champ Adresse BAN les reçoit telles quelles.
 - **Débit :** le navigateur n'envoie jamais plus de 5 requêtes par seconde, tous champs de la page confondus. L'API en accepte 7 par IP, mais plusieurs onglets ouverts sur le même réseau partagent cette limite.
 
 ## Confidentialité

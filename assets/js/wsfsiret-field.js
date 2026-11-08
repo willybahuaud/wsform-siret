@@ -13,6 +13,7 @@
 	const DEBOUNCE_MS = 300;
 	const MIN_QUERY_LENGTH = 3;
 	const MAX_QUERY_LENGTH = 200;
+	const DEFAULT_MAP_ZOOM = 17;
 
 	/**
 	 * Un champ SIRET attaché à un input de formulaire.
@@ -425,8 +426,36 @@
 			this.chosenEntry = entry;
 			this.$input.val( entry.siret ).trigger( 'change' );
 			this.getMappingRows().forEach( this.fillMappedField.bind( this, entry ) );
+			this.showOnMap( entry );
 			this.showSummary( entry );
 			this.updateValidity();
+		}
+
+		/**
+		 * Place l'établissement sur la carte IGN liée, s'il a des coordonnées.
+		 *
+		 * Passe par l'événement que la carte de Carte IGN pour WS Form écoute déjà
+		 * pour son champ Adresse BAN : les deux plugins restent indépendants.
+		 *
+		 * @param {Object} entry Établissement choisi.
+		 */
+		showOnMap( entry ) {
+			const mapFieldId = this.formInstance.get_object_meta_value( this.field, 'wsfsiret_map', '' );
+			const lat = parseFloat( entry.lat );
+			const lng = parseFloat( entry.lng );
+
+			if ( ! mapFieldId || Number.isNaN( lat ) || Number.isNaN( lng ) ) {
+				return;
+			}
+
+			this.findField( mapFieldId ).triggerHandler( 'wsfign-map-show', [
+				{
+					lat,
+					lng,
+					zoom: parseInt( this.getSetting( 'wsfsiret_map_zoom', '' ), 10 ) || DEFAULT_MAP_ZOOM,
+					address: entry.address,
+				},
+			] );
 		}
 
 		/**
@@ -476,6 +505,16 @@
 		}
 
 		/**
+		 * Trouve un champ du formulaire par son identifiant, dans la même ligne répétable.
+		 *
+		 * @param {string|number} fieldId Identifiant du champ.
+		 * @return {jQuery} Input du champ, éventuellement vide.
+		 */
+		findField( fieldId ) {
+			return $( document.getElementById( this.formInstance.form_id_prefix + 'field-' + fieldId + this.suffix ) );
+		}
+
+		/**
 		 * Retourne les lignes de mapping configurées.
 		 *
 		 * @return {Object[]} Lignes de mapping.
@@ -499,9 +538,8 @@
 				return;
 			}
 
-			const prefix = this.formInstance.form_id_prefix;
-			const $field = $( document.getElementById( prefix + 'field-' + row.ws_form_field + this.suffix ) );
-			const $wrapper = $( document.getElementById( prefix + 'field-wrapper-' + row.ws_form_field + this.suffix ) );
+			const $field = this.findField( row.ws_form_field );
+			const $wrapper = $( document.getElementById( this.formInstance.form_id_prefix + 'field-wrapper-' + row.ws_form_field + this.suffix ) );
 			const value = entry[ row.wsfsiret_component ];
 
 			if ( $field.length && ! $field.is( this.$input ) ) {

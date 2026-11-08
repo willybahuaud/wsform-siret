@@ -16,7 +16,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  */
 class Plugin {
 
-	const VERSION = '0.1.0';
+	const VERSION = '0.2.0';
 
 	/**
 	 * Enregistre les crochets de chaque composant.
@@ -28,6 +28,7 @@ class Plugin {
 	public static function boot() {
 		Field_Type::register_hooks();
 		Field_Settings::register_hooks();
+		Ign_Link::register_hooks();
 		Assets::register_hooks();
 		Submission_Validation::register_hooks();
 	}

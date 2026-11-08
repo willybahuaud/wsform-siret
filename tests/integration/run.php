@@ -10,6 +10,7 @@
  */
 
 use WSForm_Siret\Field_Type;
+use WSForm_Siret\Ign_Link;
 
 require_once __DIR__ . '/class-lab-test.php';
 require_once __DIR__ . '/updater-scenarios.php';
@@ -26,15 +27,28 @@ function wsform_siret_test_field_registered() {
 	// phpcs:enable
 
 	WSForm_Siret_Lab_Test::check( isset( $field_types[ Field_Type::FIELD_GROUP ]['types'][ Field_Type::FIELD_TYPE ] ), 'field: type registered in the shared group' );
-	foreach ( array( 'wsfsiret_field_mapping', 'wsfsiret_establishment', 'wsfsiret_reject_closed', 'wsfsiret_reject_unknown', 'wsfsiret_attribution', 'wsfsiret_text_invalid' ) as $meta_key ) {
+	foreach ( array( 'wsfsiret_field_mapping', 'wsfsiret_establishment', 'wsfsiret_reject_closed', 'wsfsiret_reject_unknown', 'wsfsiret_attribution', 'wsfsiret_text_invalid', 'wsfsiret_map', 'wsfsiret_map_zoom' ) as $meta_key ) {
 		WSForm_Siret_Lab_Test::check( isset( $meta_keys[ $meta_key ] ), 'field: setting ' . $meta_key . ' declared' );
 	}
+}
+
+/**
+ * Le groupe Carte IGN n'apparaît que si Carte IGN pour WS Form est actif.
+ *
+ * @return void
+ */
+function wsform_siret_test_ign_link() {
+	$labels = wp_list_pluck( Ign_Link::get_fieldsets(), 'label' );
+
+	WSForm_Siret_Lab_Test::same( Ign_Link::is_available(), in_array( __( 'IGN Map', 'wsform-siret' ), $labels, true ), 'ign: map settings follow the IGN plugin' );
+	WSForm_Siret_Lab_Test::check( Ign_Link::is_available(), 'ign: Carte IGN pour WS Form is active in the lab' );
 }
 
 add_filter( 'pre_http_request', array( 'WSForm_Siret_Fake_Github', 'answer' ), 10, 3 );
 
 $wsform_siret_scenarios = array(
 	'wsform_siret_test_field_registered',
+	'wsform_siret_test_ign_link',
 	'wsform_siret_test_updater_newer_release',
 	'wsform_siret_test_updater_up_to_date',
 	'wsform_siret_test_updater_tested_branch',

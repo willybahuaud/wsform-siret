@@ -1,18 +1,16 @@
-# Copyright (C) 2026 Willy Bahuaud
-# This file is distributed under the GPL-2.0-or-later.
 msgid ""
 msgstr ""
 "Project-Id-Version: Recherche SIRET pour WS Form 0.1.0\n"
 "Report-Msgid-Bugs-To: https://github.com/willybahuaud/wsform-siret/issues\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: Français\n"
-"Language: fr_FR\n"
-"Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "POT-Creation-Date: 2026-11-08T15:52:21+01:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Language: fr_FR\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: wsform-siret\n"
 
@@ -147,6 +145,7 @@ msgid "Form Field"
 msgstr "Champ du formulaire"
 
 #: includes/class-field-settings.php:151
+#: includes/class-ign-link.php:81
 msgid "Select..."
 msgstr "Sélectionner…"
 
@@ -198,43 +197,43 @@ msgstr "Numéro de TVA (s’il est connu)"
 msgid "Administrative status"
 msgstr "État administratif"
 
-#: includes/class-field-settings.php:213
+#: includes/class-field-settings.php:215
 msgid "Establishment"
 msgstr "Établissement"
 
-#: includes/class-field-settings.php:219
+#: includes/class-field-settings.php:221
 msgid "Head office"
 msgstr "Siège"
 
-#: includes/class-field-settings.php:223
+#: includes/class-field-settings.php:225
 msgid "Let the visitor choose an establishment"
 msgstr "Laisser le visiteur choisir un établissement"
 
-#: includes/class-field-settings.php:226
+#: includes/class-field-settings.php:228
 msgid "Which establishments the suggestions offer. A SIRET typed by the visitor is always kept."
 msgstr "Établissements proposés dans les suggestions. Un SIRET tapé par le visiteur est toujours conservé."
 
-#: includes/class-field-settings.php:229
+#: includes/class-field-settings.php:231
 msgid "Refuse a closed establishment"
 msgstr "Refuser un établissement fermé"
 
-#: includes/class-field-settings.php:232
+#: includes/class-field-settings.php:234
 msgid "Checked with the public directory on submit. If it does not answer, the form is accepted."
 msgstr "Vérifié auprès de l’annuaire public à l’envoi. S’il ne répond pas, le formulaire est accepté."
 
-#: includes/class-field-settings.php:235
+#: includes/class-field-settings.php:237
 msgid "Refuse a SIRET missing from the directory"
 msgstr "Refuser un SIRET absent de l’annuaire"
 
-#: includes/class-field-settings.php:238
+#: includes/class-field-settings.php:240
 msgid "Careful: companies that refuse publication are not in the directory, and would be refused too."
 msgstr "Attention : les entreprises qui refusent la diffusion de leurs données ne sont pas dans l’annuaire, et seraient refusées aussi."
 
-#: includes/class-field-settings.php:241
+#: includes/class-field-settings.php:243
 msgid "Show the data source"
 msgstr "Afficher la source des données"
 
-#: includes/class-field-settings.php:244
+#: includes/class-field-settings.php:246
 msgid "The Licence Ouverte of the data asks to credit the source. The text can be changed in Advanced > Labels."
 msgstr "La Licence Ouverte des données demande de citer la source. Le texte se change dans Avancé > Libellés."
 
@@ -255,6 +254,7 @@ msgid "siret siren company business entreprise société sirene"
 msgstr "siret siren entreprise société établissement sirene company"
 
 #: includes/class-field-type.php:90
+#: includes/class-ign-link.php:78
 msgid "Field"
 msgstr "Champ"
 
@@ -262,63 +262,63 @@ msgstr "Champ"
 msgid "Basic"
 msgstr "Général"
 
-#: includes/class-field-type.php:113
+#: includes/class-field-type.php:114
 msgid "Company Fields"
 msgstr "Champs de l’entreprise"
 
-#: includes/class-field-type.php:117
+#: includes/class-field-type.php:118
 msgid "Suggestions"
 msgstr "Suggestions"
 
-#: includes/class-field-type.php:121
+#: includes/class-field-type.php:138
 msgid "Checks on Submit"
 msgstr "Contrôles à l’envoi"
 
-#: includes/class-field-type.php:125
+#: includes/class-field-type.php:142
 msgid "Data Source"
 msgstr "Source des données"
 
-#: includes/class-field-type.php:129
+#: includes/class-field-type.php:146
 msgid "Accessibility"
 msgstr "Accessibilité"
 
-#: includes/class-field-type.php:133
+#: includes/class-field-type.php:150
 msgid "Exclusions"
 msgstr "Exclusions"
 
-#: includes/class-field-type.php:137
+#: includes/class-field-type.php:154
 msgid "Hidden Behavior"
 msgstr "Comportement si masqué"
 
-#: includes/class-field-type.php:153
+#: includes/class-field-type.php:167
 msgid "Advanced"
 msgstr "Avancé"
 
-#: includes/class-field-type.php:156
+#: includes/class-field-type.php:170
 msgid "Style"
 msgstr "Style"
 
-#: includes/class-field-type.php:160
+#: includes/class-field-type.php:174
 msgid "Classes"
 msgstr "Classes"
 
-#: includes/class-field-type.php:164
+#: includes/class-field-type.php:178
 msgid "Labels"
 msgstr "Libellés"
 
-#: includes/class-field-type.php:168
+#: includes/class-field-type.php:182
 msgid "Restrictions"
 msgstr "Restrictions"
 
-#: includes/class-field-type.php:172
+#: includes/class-field-type.php:186
 msgid "Validation"
 msgstr "Validation"
 
-#: includes/class-field-type.php:176
+#: includes/class-field-type.php:190
 msgid "Custom Attributes"
 msgstr "Attributs personnalisés"
 
-#: includes/class-field-type.php:180
+#: includes/class-field-type.php:194
 msgid "Breakpoints"
 msgstr "Points de rupture"
 
@@ -329,3 +329,27 @@ msgstr "Aucune note de version."
 #: includes/updater/class-updater.php:210
 msgid "Could not rename the plugin folder during the update."
 msgstr "Impossible de renommer le dossier du plugin pendant la mise à jour."
+
+#: includes/class-field-settings.php:192
+msgid "Latitude"
+msgstr "Latitude"
+
+#: includes/class-field-settings.php:193
+msgid "Longitude"
+msgstr "Longitude"
+
+#: includes/class-ign-link.php:64
+msgid "IGN Map"
+msgstr "Carte IGN"
+
+#: includes/class-ign-link.php:83
+msgid "IGN Map field where the chosen establishment is placed."
+msgstr "Champ Carte IGN où placer l’établissement choisi."
+
+#: includes/class-ign-link.php:86
+msgid "Zoom"
+msgstr "Zoom"
+
+#: includes/class-ign-link.php:91
+msgid "Zoom of the map once an establishment is chosen."
+msgstr "Zoom de la carte une fois l’établissement choisi."

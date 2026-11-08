@@ -68,6 +68,9 @@
 			naf: toText( company.activite_principale ),
 			vat: toText( vatNumbers[ 0 ] ),
 			status: isClosed ? i18n.closedLabel : i18n.active,
+			// Coordonnées de la base Sirene géocodée : absentes pour quelques établissements.
+			lat: toText( establishment.latitude ),
+			lng: toText( establishment.longitude ),
 			isClosed,
 			isHeadOffice: true === establishment.est_siege,
 		};

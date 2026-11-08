@@ -149,7 +149,7 @@ class Field_Settings {
 				'type'               => 'select',
 				'options'            => 'fields',
 				'options_blank'      => __( 'Select...', 'wsform-siret' ),
-				'fields_filter_type' => array( 'text', 'textarea', 'select', 'hidden', 'tel' ),
+				'fields_filter_type' => array( 'text', 'textarea', 'select', 'hidden', 'tel', Ign_Link::ADDRESS_FIELD_TYPE ),
 				'key'                => 'ws_form_field',
 			),
 		);
@@ -189,6 +189,8 @@ class Field_Settings {
 			'naf'        => __( 'NAF code (main activity)', 'wsform-siret' ),
 			'vat'        => __( 'VAT number (when known)', 'wsform-siret' ),
 			'status'     => __( 'Administrative status', 'wsform-siret' ),
+			'lat'        => __( 'Latitude', 'wsform-siret' ),
+			'lng'        => __( 'Longitude', 'wsform-siret' ),
 		);
 		$options    = array();
 

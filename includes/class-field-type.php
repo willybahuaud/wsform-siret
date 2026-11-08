@@ -108,38 +108,52 @@ class Field_Type {
 			'basic'    => array(
 				'label'     => __( 'Basic', 'wsform-siret' ),
 				'meta_keys' => array( 'label', 'label_render', 'required', 'hidden', 'hidden_warning', 'placeholder', 'help' ),
-				'fieldsets' => array(
+				'fieldsets' => array_merge(
 					array(
-						'label'     => __( 'Company Fields', 'wsform-siret' ),
-						'meta_keys' => array( 'wsfsiret_field_mapping' ),
+						array(
+							'label'     => __( 'Company Fields', 'wsform-siret' ),
+							'meta_keys' => array( 'wsfsiret_field_mapping' ),
+						),
+						array(
+							'label'     => __( 'Suggestions', 'wsform-siret' ),
+							'meta_keys' => array( 'wsfsiret_establishment' ),
+						),
 					),
-					array(
-						'label'     => __( 'Suggestions', 'wsform-siret' ),
-						'meta_keys' => array( 'wsfsiret_establishment' ),
-					),
-					array(
-						'label'     => __( 'Checks on Submit', 'wsform-siret' ),
-						'meta_keys' => array( 'wsfsiret_reject_closed', 'wsfsiret_reject_unknown' ),
-					),
-					array(
-						'label'     => __( 'Data Source', 'wsform-siret' ),
-						'meta_keys' => array( 'wsfsiret_attribution' ),
-					),
-					array(
-						'label'     => __( 'Accessibility', 'wsform-siret' ),
-						'meta_keys' => array( 'aria_label' ),
-					),
-					array(
-						'label'     => __( 'Exclusions', 'wsform-siret' ),
-						'meta_keys' => array( 'exclude_email' ),
-					),
-					array(
-						'label'     => __( 'Hidden Behavior', 'wsform-siret' ),
-						'meta_keys' => array( 'hidden_bypass' ),
-					),
+					Ign_Link::get_fieldsets(),
+					self::get_end_of_basic_fieldsets()
 				),
 			),
 			'advanced' => self::get_advanced_tab(),
+		);
+	}
+
+	/**
+	 * Retourne les groupes de fin de l'onglet Général : contrôles, source, options du cœur.
+	 *
+	 * @return array[]
+	 */
+	private static function get_end_of_basic_fieldsets() {
+		return array(
+			array(
+				'label'     => __( 'Checks on Submit', 'wsform-siret' ),
+				'meta_keys' => array( 'wsfsiret_reject_closed', 'wsfsiret_reject_unknown' ),
+			),
+			array(
+				'label'     => __( 'Data Source', 'wsform-siret' ),
+				'meta_keys' => array( 'wsfsiret_attribution' ),
+			),
+			array(
+				'label'     => __( 'Accessibility', 'wsform-siret' ),
+				'meta_keys' => array( 'aria_label' ),
+			),
+			array(
+				'label'     => __( 'Exclusions', 'wsform-siret' ),
+				'meta_keys' => array( 'exclude_email' ),
+			),
+			array(
+				'label'     => __( 'Hidden Behavior', 'wsform-siret' ),
+				'meta_keys' => array( 'hidden_bypass' ),
+			),
 		);
 	}
 

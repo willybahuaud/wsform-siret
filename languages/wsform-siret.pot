@@ -2,14 +2,14 @@
 # This file is distributed under the GPL-2.0-or-later.
 msgid ""
 msgstr ""
-"Project-Id-Version: Recherche SIRET pour WS Form 0.1.0\n"
+"Project-Id-Version: Recherche SIRET pour WS Form 0.2.0\n"
 "Report-Msgid-Bugs-To: https://github.com/willybahuaud/wsform-siret/issues\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-11-08T15:52:21+01:00\n"
+"POT-Creation-Date: 2026-11-08T17:18:19+01:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: wsform-siret\n"
@@ -145,6 +145,7 @@ msgid "Form Field"
 msgstr ""
 
 #: includes/class-field-settings.php:151
+#: includes/class-ign-link.php:81
 msgid "Select..."
 msgstr ""
 
@@ -196,43 +197,51 @@ msgstr ""
 msgid "Administrative status"
 msgstr ""
 
-#: includes/class-field-settings.php:213
+#: includes/class-field-settings.php:192
+msgid "Latitude"
+msgstr ""
+
+#: includes/class-field-settings.php:193
+msgid "Longitude"
+msgstr ""
+
+#: includes/class-field-settings.php:215
 msgid "Establishment"
 msgstr ""
 
-#: includes/class-field-settings.php:219
+#: includes/class-field-settings.php:221
 msgid "Head office"
 msgstr ""
 
-#: includes/class-field-settings.php:223
+#: includes/class-field-settings.php:225
 msgid "Let the visitor choose an establishment"
 msgstr ""
 
-#: includes/class-field-settings.php:226
+#: includes/class-field-settings.php:228
 msgid "Which establishments the suggestions offer. A SIRET typed by the visitor is always kept."
 msgstr ""
 
-#: includes/class-field-settings.php:229
+#: includes/class-field-settings.php:231
 msgid "Refuse a closed establishment"
 msgstr ""
 
-#: includes/class-field-settings.php:232
+#: includes/class-field-settings.php:234
 msgid "Checked with the public directory on submit. If it does not answer, the form is accepted."
 msgstr ""
 
-#: includes/class-field-settings.php:235
+#: includes/class-field-settings.php:237
 msgid "Refuse a SIRET missing from the directory"
 msgstr ""
 
-#: includes/class-field-settings.php:238
+#: includes/class-field-settings.php:240
 msgid "Careful: companies that refuse publication are not in the directory, and would be refused too."
 msgstr ""
 
-#: includes/class-field-settings.php:241
+#: includes/class-field-settings.php:243
 msgid "Show the data source"
 msgstr ""
 
-#: includes/class-field-settings.php:244
+#: includes/class-field-settings.php:246
 msgid "The Licence Ouverte of the data asks to credit the source. The text can be changed in Advanced > Labels."
 msgstr ""
 
@@ -253,6 +262,7 @@ msgid "siret siren company business entreprise société sirene"
 msgstr ""
 
 #: includes/class-field-type.php:90
+#: includes/class-ign-link.php:78
 msgid "Field"
 msgstr ""
 
@@ -260,64 +270,80 @@ msgstr ""
 msgid "Basic"
 msgstr ""
 
-#: includes/class-field-type.php:113
+#: includes/class-field-type.php:114
 msgid "Company Fields"
 msgstr ""
 
-#: includes/class-field-type.php:117
+#: includes/class-field-type.php:118
 msgid "Suggestions"
 msgstr ""
 
-#: includes/class-field-type.php:121
+#: includes/class-field-type.php:138
 msgid "Checks on Submit"
 msgstr ""
 
-#: includes/class-field-type.php:125
+#: includes/class-field-type.php:142
 msgid "Data Source"
 msgstr ""
 
-#: includes/class-field-type.php:129
+#: includes/class-field-type.php:146
 msgid "Accessibility"
 msgstr ""
 
-#: includes/class-field-type.php:133
+#: includes/class-field-type.php:150
 msgid "Exclusions"
 msgstr ""
 
-#: includes/class-field-type.php:137
+#: includes/class-field-type.php:154
 msgid "Hidden Behavior"
 msgstr ""
 
-#: includes/class-field-type.php:153
+#: includes/class-field-type.php:167
 msgid "Advanced"
 msgstr ""
 
-#: includes/class-field-type.php:156
+#: includes/class-field-type.php:170
 msgid "Style"
 msgstr ""
 
-#: includes/class-field-type.php:160
+#: includes/class-field-type.php:174
 msgid "Classes"
 msgstr ""
 
-#: includes/class-field-type.php:164
+#: includes/class-field-type.php:178
 msgid "Labels"
 msgstr ""
 
-#: includes/class-field-type.php:168
+#: includes/class-field-type.php:182
 msgid "Restrictions"
 msgstr ""
 
-#: includes/class-field-type.php:172
+#: includes/class-field-type.php:186
 msgid "Validation"
 msgstr ""
 
-#: includes/class-field-type.php:176
+#: includes/class-field-type.php:190
 msgid "Custom Attributes"
 msgstr ""
 
-#: includes/class-field-type.php:180
+#: includes/class-field-type.php:194
 msgid "Breakpoints"
+msgstr ""
+
+#: includes/class-ign-link.php:64
+msgid "IGN Map"
+msgstr ""
+
+#: includes/class-ign-link.php:83
+msgid "IGN Map field where the chosen establishment is placed."
+msgstr ""
+
+#: includes/class-ign-link.php:86
+msgid "Zoom"
+msgstr ""
+
+#: includes/class-ign-link.php:91
+msgid "Zoom of the map once an establishment is chosen."
 msgstr ""
 
 #: includes/updater/class-release-notes.php:28
