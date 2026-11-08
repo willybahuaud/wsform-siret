@@ -14,7 +14,4 @@
 /phpunit.xml.dist
 /README.md
 .DS_Store
-/CLAUDE.md
-/LOCAL.md
-/docs
 /dist
