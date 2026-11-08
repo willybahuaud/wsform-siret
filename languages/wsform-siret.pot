@@ -1,0 +1,329 @@
+# Copyright (C) 2026 Willy Bahuaud
+# This file is distributed under the GPL-2.0-or-later.
+msgid ""
+msgstr ""
+"Project-Id-Version: Recherche SIRET pour WS Form 0.1.0\n"
+"Report-Msgid-Bugs-To: https://github.com/willybahuaud/wsform-siret/issues\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2026-11-08T15:52:21+01:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.12.0\n"
+"X-Domain: wsform-siret\n"
+
+#. Plugin Name of the plugin
+#: wsform-siret.php
+#: wsform-siret.php:55
+msgid "Recherche SIRET pour WS Form"
+msgstr ""
+
+#. Plugin URI of the plugin
+#: wsform-siret.php
+msgid "https://github.com/willybahuaud/wsform-siret"
+msgstr ""
+
+#. Description of the plugin
+#: wsform-siret.php
+msgid "A WS Form field that finds a French company by name or SIRET, checks it and fills the form. Public government data, no API key."
+msgstr ""
+
+#. Author of the plugin
+#: wsform-siret.php
+msgid "Willy Bahuaud"
+msgstr ""
+
+#. Author URI of the plugin
+#: wsform-siret.php
+msgid "https://wabeo.fr"
+msgstr ""
+
+#: includes/class-assets.php:70
+msgid "Company suggestions"
+msgstr ""
+
+#: includes/class-assets.php:71
+msgid "1 company found. Use the arrow keys to browse."
+msgstr ""
+
+#. translators: %d: number of suggestions.
+#: includes/class-assets.php:73
+#, php-format
+msgid "%d companies found. Use the arrow keys to browse."
+msgstr ""
+
+#: includes/class-assets.php:74
+msgid "Active"
+msgstr ""
+
+#: includes/class-assets.php:75
+msgid "Closed"
+msgstr ""
+
+#: includes/class-assets.php:76
+msgid "head office"
+msgstr ""
+
+#. translators: %s: SIRET number.
+#: includes/class-assets.php:78
+#, php-format
+msgid "SIRET %s"
+msgstr ""
+
+#: includes/class-field-settings.php:63
+msgid "Choose a company from the list, or enter a valid 14-digit SIRET number."
+msgstr ""
+
+#: includes/class-field-settings.php:64
+msgid "This establishment is closed."
+msgstr ""
+
+#: includes/class-field-settings.php:65
+msgid "This SIRET number is not listed in the public directory of companies."
+msgstr ""
+
+#: includes/class-field-settings.php:66
+msgid "No company found. Check the spelling, or enter the SIRET number."
+msgstr ""
+
+#: includes/class-field-settings.php:67
+msgid "This number is valid, but the company is not in the public directory. Some companies choose not to be listed."
+msgstr ""
+
+#: includes/class-field-settings.php:68
+msgid "Company search is unavailable right now. You can still enter the SIRET number."
+msgstr ""
+
+#: includes/class-field-settings.php:69
+msgid "Source: Sirene directory (Insee), via the Recherche d’entreprises API, Licence Ouverte 2.0"
+msgstr ""
+
+#: includes/class-field-settings.php:98
+msgid "Invalid number"
+msgstr ""
+
+#: includes/class-field-settings.php:99
+msgid "Closed establishment"
+msgstr ""
+
+#: includes/class-field-settings.php:100
+msgid "Number not listed (on submit)"
+msgstr ""
+
+#: includes/class-field-settings.php:101
+msgid "No suggestion"
+msgstr ""
+
+#: includes/class-field-settings.php:102
+msgid "Number not listed (while typing)"
+msgstr ""
+
+#: includes/class-field-settings.php:103
+msgid "Search unavailable"
+msgstr ""
+
+#: includes/class-field-settings.php:104
+msgid "Source mention"
+msgstr ""
+
+#: includes/class-field-settings.php:129
+msgid "Field Mapping"
+msgstr ""
+
+#: includes/class-field-settings.php:139
+msgid "Fields to fill in when the visitor chooses a company. They are emptied if the visitor changes the SIRET afterwards."
+msgstr ""
+
+#: includes/class-field-settings.php:142
+msgid "Company Data"
+msgstr ""
+
+#: includes/class-field-settings.php:148
+msgid "Form Field"
+msgstr ""
+
+#: includes/class-field-settings.php:151
+msgid "Select..."
+msgstr ""
+
+#: includes/class-field-settings.php:180
+msgid "Company name"
+msgstr ""
+
+#: includes/class-field-settings.php:181
+msgid "Legal name"
+msgstr ""
+
+#: includes/class-field-settings.php:182
+msgid "Trade name of the establishment"
+msgstr ""
+
+#: includes/class-field-settings.php:183
+msgid "SIRET"
+msgstr ""
+
+#: includes/class-field-settings.php:184
+msgid "SIREN"
+msgstr ""
+
+#: includes/class-field-settings.php:185
+msgid "Full address"
+msgstr ""
+
+#: includes/class-field-settings.php:186
+msgid "Street address"
+msgstr ""
+
+#: includes/class-field-settings.php:187
+msgid "Postal code"
+msgstr ""
+
+#: includes/class-field-settings.php:188
+msgid "City"
+msgstr ""
+
+#: includes/class-field-settings.php:189
+msgid "NAF code (main activity)"
+msgstr ""
+
+#: includes/class-field-settings.php:190
+msgid "VAT number (when known)"
+msgstr ""
+
+#: includes/class-field-settings.php:191
+msgid "Administrative status"
+msgstr ""
+
+#: includes/class-field-settings.php:213
+msgid "Establishment"
+msgstr ""
+
+#: includes/class-field-settings.php:219
+msgid "Head office"
+msgstr ""
+
+#: includes/class-field-settings.php:223
+msgid "Let the visitor choose an establishment"
+msgstr ""
+
+#: includes/class-field-settings.php:226
+msgid "Which establishments the suggestions offer. A SIRET typed by the visitor is always kept."
+msgstr ""
+
+#: includes/class-field-settings.php:229
+msgid "Refuse a closed establishment"
+msgstr ""
+
+#: includes/class-field-settings.php:232
+msgid "Checked with the public directory on submit. If it does not answer, the form is accepted."
+msgstr ""
+
+#: includes/class-field-settings.php:235
+msgid "Refuse a SIRET missing from the directory"
+msgstr ""
+
+#: includes/class-field-settings.php:238
+msgid "Careful: companies that refuse publication are not in the directory, and would be refused too."
+msgstr ""
+
+#: includes/class-field-settings.php:241
+msgid "Show the data source"
+msgstr ""
+
+#: includes/class-field-settings.php:244
+msgid "The Licence Ouverte of the data asks to credit the source. The text can be changed in Advanced > Labels."
+msgstr ""
+
+#: includes/class-field-type.php:48
+msgid "French public services"
+msgstr ""
+
+#: includes/class-field-type.php:68
+msgid "Company (SIRET)"
+msgstr ""
+
+#: includes/class-field-type.php:69
+msgid "Company"
+msgstr ""
+
+#: includes/class-field-type.php:82
+msgid "siret siren company business entreprise société sirene"
+msgstr ""
+
+#: includes/class-field-type.php:90
+msgid "Field"
+msgstr ""
+
+#: includes/class-field-type.php:109
+msgid "Basic"
+msgstr ""
+
+#: includes/class-field-type.php:113
+msgid "Company Fields"
+msgstr ""
+
+#: includes/class-field-type.php:117
+msgid "Suggestions"
+msgstr ""
+
+#: includes/class-field-type.php:121
+msgid "Checks on Submit"
+msgstr ""
+
+#: includes/class-field-type.php:125
+msgid "Data Source"
+msgstr ""
+
+#: includes/class-field-type.php:129
+msgid "Accessibility"
+msgstr ""
+
+#: includes/class-field-type.php:133
+msgid "Exclusions"
+msgstr ""
+
+#: includes/class-field-type.php:137
+msgid "Hidden Behavior"
+msgstr ""
+
+#: includes/class-field-type.php:153
+msgid "Advanced"
+msgstr ""
+
+#: includes/class-field-type.php:156
+msgid "Style"
+msgstr ""
+
+#: includes/class-field-type.php:160
+msgid "Classes"
+msgstr ""
+
+#: includes/class-field-type.php:164
+msgid "Labels"
+msgstr ""
+
+#: includes/class-field-type.php:168
+msgid "Restrictions"
+msgstr ""
+
+#: includes/class-field-type.php:172
+msgid "Validation"
+msgstr ""
+
+#: includes/class-field-type.php:176
+msgid "Custom Attributes"
+msgstr ""
+
+#: includes/class-field-type.php:180
+msgid "Breakpoints"
+msgstr ""
+
+#: includes/updater/class-release-notes.php:28
+msgid "No release notes."
+msgstr ""
+
+#: includes/updater/class-updater.php:210
+msgid "Could not rename the plugin folder during the update."
+msgstr ""
