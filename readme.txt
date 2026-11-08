@@ -4,7 +4,7 @@ Tags: ws form, siret, siren, company, autocomplete
 Requires at least: 6.5
 Tested up to: 7.1
 Requires PHP: 7.4
-Stable tag: 0.1.0
+Stable tag: 0.2.0
 License: GPL-2.0-or-later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -32,9 +32,15 @@ The French government publishes its company directory through the Recherche d'en
 
 = Filling =
 
-* Map form fields to company data: name, legal name, trade name, SIRET, SIREN, full address, street, postal code, city, NAF code, VAT number, administrative status
+* Map form fields to company data: name, legal name, trade name, SIRET, SIREN, full address, street, postal code, city, NAF code, VAT number, administrative status, latitude, longitude
 * A summary under the field shows the name, address and status of the chosen company
 * If the visitor changes the SIRET afterwards, the filled fields are emptied
+
+= With Carte IGN pour WS Form =
+
+* When that plugin is active, an "IGN Map" settings group lets you pick a map of the form: the chosen establishment is placed on it
+* A BAN Address field can receive the company address through the field mapping
+* The point uses the coordinates of the Sirene database, with no extra geocoding call
 
 = Also =
 
@@ -50,6 +56,8 @@ The French government publishes its company directory through the Recherche d'en
 * The API does not return a VAT number for every company. The mapped field then stays empty.
 * Typing a SIREN offers the head office. For another establishment, search by name and city, or type its SIRET.
 * LITE has no repeatable sections, so using this field in one requires PRO.
+* A few establishments have no coordinates in the Sirene database. The map then stays where it is.
+* To receive latitude or longitude, use a text or hidden field: a WS Form Number field refuses decimals by default.
 
 == Installation ==
 
@@ -77,6 +85,11 @@ This plugin is not affiliated with or endorsed by Insee, DINUM or WS Form.
 Updates come from the GitHub releases of the plugin, not from WordPress.org.
 
 == Changelog ==
+
+= 0.2.0 =
+* Link with Carte IGN pour WS Form: the chosen establishment is placed on an IGN map of the form, and a BAN Address field can receive the company address.
+* New mapped data: latitude and longitude.
+* Number fields are no longer offered as mapping targets: they refuse decimal coordinates.
 
 = 0.1.0 =
 * First version: company search by name, SIREN or SIRET, check digit, server checks, field mapping.

@@ -3,7 +3,7 @@
  * Plugin Name:       Recherche SIRET pour WS Form
  * Plugin URI:        https://github.com/willybahuaud/wsform-siret
  * Description:       A WS Form field that finds a French company by name or SIRET, checks it and fills the form. Public government data, no API key.
- * Version:           0.1.0
+ * Version:           0.2.0
  * Requires at least: 6.5
  * Requires PHP:      7.4
  * Author:            Willy Bahuaud
