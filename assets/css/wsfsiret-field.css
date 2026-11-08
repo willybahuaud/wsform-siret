@@ -1,0 +1,92 @@
+/* Ancre de hauteur nulle : la liste passe au-dessus du contenu sans décaler le formulaire. */
+.wsfsiret-anchor {
+	height: 0;
+	position: relative;
+}
+
+.wsfsiret-listbox {
+	background-color: var(--wsf-field-color-background, #fff);
+	border: 1px solid var(--wsf-field-border-color, #8c8f94);
+	box-shadow: 0 2px 6px rgb(0 0 0 / 20%);
+	color: var(--wsf-field-color, #1e1e1e);
+	font-family: var(--wsf-form-font-family, inherit);
+	left: 0;
+	list-style: none;
+	margin: 0;
+	max-height: 20em;
+	overflow-y: auto;
+	padding: 0;
+	position: absolute;
+	right: 0;
+	top: 0;
+	z-index: 1000;
+}
+
+.wsfsiret-listbox[hidden],
+.wsfsiret-summary[hidden] {
+	display: none;
+}
+
+.wsfsiret-option {
+	cursor: pointer;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0 0.5em;
+	margin: 0;
+	padding: 0.5em 0.75em;
+}
+
+.wsfsiret-option:hover,
+.wsfsiret-option[aria-selected="true"] {
+	background-color: var(--wsf-field-button-primary-color-background, #1e4f91);
+	color: var(--wsf-field-button-primary-color, #fff);
+}
+
+.wsfsiret-option-name {
+	flex-basis: 100%;
+}
+
+.wsfsiret-option-details,
+.wsfsiret-option-closed {
+	font-size: 0.875em;
+	opacity: 0.85;
+}
+
+.wsfsiret-option-closed,
+.wsfsiret-summary-status-closed {
+	font-weight: 700;
+}
+
+.wsfsiret-summary {
+	display: flex;
+	flex-direction: column;
+	margin-top: 0.5em;
+}
+
+/* Réservé aux lecteurs d'écran : la liste ouverte suffit à l'œil. */
+.wsfsiret-status {
+	clip-path: inset(50%);
+	height: 1px;
+	overflow: hidden;
+	position: absolute;
+	white-space: nowrap;
+	width: 1px;
+}
+
+/* Spécificité du cœur à égaler : sa classe wsf-help impose display: block. */
+.wsf-form .wsfsiret-notice:empty {
+	display: none;
+}
+
+.wsfsiret-notice,
+.wsfsiret-attribution {
+	margin-top: 0.5em;
+}
+
+.wsfsiret-attribution {
+	font-size: 0.75em;
+}
+
+.wsfsiret-attribution a {
+	color: inherit;
+}
